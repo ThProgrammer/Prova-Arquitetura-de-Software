@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Cadastro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastro</h1>
+        
+        <form method="post" action="salvar_produtos.jsp"> 
+            <p>
+                <label for="codigo">Código:</label>                
+                <input type="text" name="codigo" id="codigo"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+            
+            <p>
+                <label for="nome">Nome do produto:</label>                
+                <input type="text" name="nome" id="nome" size="50" maxlength="50"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+            
+            <p>
+                <label for="marca">Marca:</label>                
+                <input type="text" name="marca" id="marca" maxlength="50"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+            
+            <p>
+                <label for="preco">Preço:</label>                
+                <input type="number" name="preco" id="preco"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+            
+            <p>
+                <input type="submit" value="Salvar">
+            </p>
+        </form>
+    
+        <!-- method "post": não mostrar as informações na url
+        action: salvar as informações no arquivo tal-->
+    </body>
+</html>
