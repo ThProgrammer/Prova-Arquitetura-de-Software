@@ -7,3 +7,80 @@ mandar para a camada controller em ControleUsuario que vai receber esses dados e
 No método validarLogin ele vai mandar para a CAMADA MODEL na classe EmpresaDao.java que vai mandar esses dados para o banco de dados e verificar se eles estão armazenados lá! (VE A IMAGEM)
 
 Poderemos fazer isso para todos os outros tipos de validação como departamento funcionario e etc, todos no EmpresaDao.
+
+====================================
+
+1 - CRIANDO UMA QUERY: Classe Usuario
+
+Na classe Usuario, precisamos de uma NamedQuery que busque os atributos que desejamos, no caso email e senha 
+
+@NamedQuery(name = "Usuario.findByEmailSenha", query = "SELECT u FROM Usuario u WHERE u.emailFun = :emailFun AND u.senhaUsu = :senhausu")
+
+====================================
+
+2 - Empresa dao > validarLogin
+
+I - Criaremos o método de validar que receberá os parametros u e s (variáveis decladas no controller)
+
+II - Em seguida conectamos usando o método conectar (nota: DAO)
+
+III - E vamos chamar o nosso namedquery criado
+
+IV - após isso setamos os parâmetros para a query
+
+V - e retornamos o usuario que tenha essas informações:
+
+= BORA:
+
+I - *public* Usuario validarLogin(String u, String s) {
+
+II - conectar()
+
+III - TypedQuery<Usuario> query = manager.createNamedQuery("Usuario.findByEmailSenha", Usuario.class);
+
+OBS1: TEM Q IMPORTAR TYPEDQUERY
+
+OBS2: Os parâmetros são o name da namedquery e a classe onde ela está .class
+
+IV - query.setParameter("emailFun", u);
+	query.setParameter("senhaFun", s);
+
+Seus parâmetros são como o banco de dados os chama e a variáveis declaradas pelo controller (que são parametros desta função)
+
+V - return query.getSingleResult();
+
+}
+
+
+====================================
+	E SE ELE NÃO ACHAR?:
+Método quase pronto, mas para o programa não falhar caso o usuario não exista no banco de dados...
+
+envolve toda o método anterior num try {
+
+}
+
+catch (NoResultException x //tem q importar também!!) {
+	return null
+}
+
+Basicamente, ele tenta achar os dados, se não achar, ele retorna null
+
+==================================
+
+3 - Ligando o método da DAO com o Controller: Controller.java
+
+Dentro da condiçao da flag.equals após os getParameter declara um objeto EmpresaDao e um objeto usuario
+
+EmpresaDao dao = new EmpresaDao
+Usuario usuario = dao.validarLogin(u, s);
+
+Após isso inserimos as condições => se o objeto do usuario == null -> usuario invalido
+
+	mostrar mensagem
+
+else -> usuario valido
+
+	mostrar uma tela na view
+
+ANOTAR AMANHA CRIAR ARQUIVO MENSAGENS

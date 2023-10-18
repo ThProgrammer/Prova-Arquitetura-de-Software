@@ -34,7 +34,7 @@ manager: executar comandos nas tabelas
 
 ===================================
 
-	2. Métodos:
+	2. Método Conectar:
 
 private void conectar() {
 	factory = Persistence. (e seleciona a segunda sugestão do netbeans)
