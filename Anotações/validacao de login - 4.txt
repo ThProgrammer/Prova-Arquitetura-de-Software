@@ -1,0 +1,9 @@
+Validação de login - Aula 4
+
+Vamos pegar um dado q veio dos forms da camada view la do html
+
+mandar para a camada controller em ControleUsuario que vai receber esses dados e vai passar no método validarLogin
+
+No método validarLogin ele vai mandar para a CAMADA MODEL na classe EmpresaDao.java que vai mandar esses dados para o banco de dados e verificar se eles estão armazenados lá! (VE A IMAGEM)
+
+Poderemos fazer isso para todos os outros tipos de validação como departamento funcionario e etc, todos no EmpresaDao.

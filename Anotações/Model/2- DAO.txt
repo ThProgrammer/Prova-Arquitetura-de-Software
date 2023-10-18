@@ -1,0 +1,56 @@
+DAO EmpresaDao
+
+1 - Criar no package model a classe EmpresaDao (java file)
+
+----------------------------------
+
+2 - Configuration Files:
+
+persistence.xmml
+(Onde a conexão com o banco de dados esta)
+
+E vamos pegar a nossa <persistence-unit> (ta bem no comecin do código)
+
+nome da minha unidade de persistencia: SitePU
+
+Vamos ter que usar ele na classe dao
+
+------------------------------------
+
+3 - Classe Dao
+
+	1. Atributos:
+
+Adiciona o atributo 
+"private EntityManagerFactory factory;" e o importa 
+
+private EntityManager manager e importa
+
+factory: conectar o banco de dados
+
+(Esse factory é onde vamos adicionar o nome da persistence unit)
+
+manager: executar comandos nas tabelas
+
+===================================
+
+	2. Métodos:
+
+private void conectar() {
+	factory = Persistence. (e seleciona a segunda sugestão do netbeans)
+}
+
+TEM Q IMPORTAR O PERSISTENCE!!!
+
+Persistence.createEntityManagerFactory("SitePU");
+
+
+Agora vamos iniciar o atributo manager ao conectar
+
+private void conectar() {
+	factory = Persistence.etc...
+	manager = factory.createEntityManager();	
+}
+
+
+VOLTAREMOS A MEXER AQUI PARA O VALIDAR LOGIN

@@ -1,0 +1,46 @@
+Arquivos necessários:
+
+JDK
+NetBeans
+MySQL
+JDBC
+TomCat
+
+Como criar o projeto no netbeans
+
+File > New Project:
+
+Passo 1 - Choose Project:
+
+Java with ant > Java Web
+
+Passo 2 - Name and Location (auto explicativo):
+
+next
+
+-----------------------------------
+
+Passo 3 - Server and Settings:
+
+Agora vamos adicionar o server tomcat ao projeto
+ 
+Server > Add > 
+
+	1. Choose server: 
+
+Apache Tomcat or TomEE >
+
+	2. Installation and Login Details
+
+Browse > Pasta onde o tomcat foi descompactado, apache tomcat 8.5... (primeiro arquivo da pasta vai ser bin) >
+adicionar username e password faceis (tomcat e tomcat)
+
+next
+
+-------------------------------
+
+Passo 4 - Frameworks
+
+Não selecionar NENHUM e Finish
+
+

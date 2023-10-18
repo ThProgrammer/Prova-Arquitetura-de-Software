@@ -1,0 +1,30 @@
+Informações adicionais:
+
+Para parar a execução do site, vai no terminal do netbeans na aba Apache Tomcat or TomEE e clica no quadrado vermelho.
+
+-----------------------------------
+
+Salvar as informações enviadas no form em um arquivo banco de dados:
+
+action="nomedocontroller"
+
+não deixar informações na url: method="post"
+
+------------------------------------
+
+INFORMAÇÃO IMPORTANTE
+
+COMO FAZER UMA PAGINA NA OUTRA (?) (CADASTRO NO INDEX)
+
+Tag <iframe src = "apresentacao.html" name="centro">
+</iframe>
+
+Ao usar target="nomedoiframe" numa tag <a>, ao clicar no link exibiremos a página no iframe
+
+------------------------------------
+
+INFORMAÇÃO IMPORTANTE (Talvez não mais)
+
+Ao criar um formulario, as propriedades size e maxlength da tag input, devem ser iguais ao valor do varchar da coluna do banco de dados.
+
+------------------------------------

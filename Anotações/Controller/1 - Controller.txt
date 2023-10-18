@@ -1,0 +1,68 @@
+Camada Controller
+
+O formulario de login da pagina index vai mandar os dados para a classe ControleUsuario.java
+
+Criando a ControleUsuario.java:
+
+No pacote controler crie um new SERVLET
+Servlet é uma classe especial que só serve para receber dados de requisição da view
+
+Nome: ControleUsuario
+
+NEXT FINISH
+
+================================
+Bora receber os dados!
+
+
+PROCESS REQUEST:
+
+Toda programação de uma servlet é feita no metodo processRequest
+Que é o processo de requisição que controla receber e enviar dados e get e post e api e bla bla bla
+
+Para receber os dados precisamos criar uma variável para cada dado que receberemos (no caso os atributos da tabela usuario, usuario e senha.)
+
+String u
+String s
+
+E usamos o método request.getParameter("name colocado no input la do html")
+
+u = request.getParameter("usuario")
+s = request.getParameter("senha")
+
+== UM PEQUENO TESTE ==
+
+Bota PrintWriter out = response.getWriter();
+
+E out.print(u);
+out.print(s); debaixo das request.getParameter e testa!
+========================
+
+DE QUE FORM VEM OS DADOS???????
+
+Resumidamente agora vamos mandar uma flag para que o servlet controller saiba de que formulario os dados estão vindo laaa no index html:
+
+Botamos a seguinte tag input logo no começo do form:
+
+<input type="hidden" name="flag" value="login"> o value indica o formulario, no caso, login!
+
+Também temos que fazer uma alteração na servlet de controleusuario
+
+Agora também receberemos o dado flag pelo form, então temos que criar a variável dele
+
+String flag; flag = request.getParameter(flag);
+
+E fazer uma validação para ver se é a flag é login, e finalmente receber os dados u e s:
+
+if (flag.equals("login")) {
+                u = request.getParameter("usuario");
+                s = request.getParameter("senha");
+            }
+
+Se não for de login, verificamos se é de cadastro de usuario else if flag bla bla bla ("cadastroUsuario")
+
+=================================
+
+Agora vamos validar logins!!
+
+

@@ -1,0 +1,10 @@
+Após criar o projeto
+
+Terá um arquivo index.html, para criar mais páginas vai em: 
+Web Pages > New > Html (ou outro tipo de arquivo)
+
+--------------
+
+Adicione a conexão com o banco de dados:
+Libraries > Add JAR Folder > Selecionar o Driver JDBC q baixamos anteriormente (mysql-connector-j-8.1.0, vai ter o icon do java)
+

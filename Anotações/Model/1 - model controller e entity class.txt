@@ -1,0 +1,61 @@
+Query de criação ta na pasta
+
+SE O MODELO DO BANCO DE DADOS ESTIVER ERRADO, VAI TA TUDO ERRADO
+
+MODEL E CONTROLLER (aula 3)
+
+Após o site estar criado e o banco de dados também, criaremos os pacotes model e controller
+
+Em seguida vamos pedir pro JPA ler as tabelas do banco de dados (com relações e etc) e criar uma classe java para cada tabela (trabalho que poderia ser feito manualmente mas que a chande errar é muito grande)
+
+Para isso a gente vai em model > new > Entity class from database 
+
+(Ou other > persistence > entity Class from database)
+
+New Database connection > Driver: MySQL (Connector/ J driver)
+
+Depois vai em add e adiciona o arquivo do driver (q vai ter a caneca java de icon)
+
+- NEW CONNECTION WIZARD:
+
+Agora vamos colocar as informações para conectar o banco de dados (Normalmente localhost; 3306 e o nome da database (banco de dados))
+e usuario (root) e senha.
+
+Depois test connection 
+
+Deu erro de time zone:
+
+JDBC URL: jdbc:mysql://localhost:3306/banco?zeroDateTimeBehavior=CONVERT_TO_NULL
+
+JDBC URL CORRIGIDA: jdbc:mysql://localhost:3306/banco?useTimezone=true&serverTimezone=UTC
+
+NEXT
+
+Choose database schema:
+NEXT
+
+Choose name for connection:
+
+Finish
+
+
+2. Database Tables:
+
+	Seleciona, add e next
+
+
+3. Entity Classes:
+Deixar marcado só a primeira e a última opção
+NEXT
+
+
+
+4. Mapping Options:
+
+Association Fetch: eager
+
+Collection Type: java.util.List
+
+Só a terceira checkbox marcada
+
+MODEL CLASS FEITO
