@@ -8,6 +8,13 @@ header {
     padding: 10px;
 }
 
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+
 nav {
     width: 90%;
     background-color: #99ffff;

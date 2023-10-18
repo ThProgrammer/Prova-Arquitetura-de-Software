@@ -10,26 +10,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
     </head>
-    
+
     <body>
         <header>
-            <h1>Vou Passar</h1>          
+            <h1>Vou Passar</h1>    
+
+            <form method="post" action="ControleUsuario">
+                <input type="hidden" name="flag" value="login">
+                <label>Usuário</label>
+                <input type="text" name="usuario" id="user">
+                <label>Senha:</label>
+                <input type="password" name="senha" id="senha">
+                <input type="submit" value="Entrar">           
+            </form>
+
         </header>
-        
+
+
+
         <nav>
             <a href="cadpro.html" target="centro">Cadastro de produtos</a>
             <a href="listapro.html" target="centro">Listagem de produtos</a>
             <a href="excpro.html" target="centro">Excluir produtos</a>
             <a href="altpro.html" target="centro">Alterar produtos</a>
         </nav>
-        
+
         <main>
             <iframe src="apresentacao.html" name="centro"></iframe>
         </main>
-        
+
         <footer>
             <p>Desenvolvido por: Passar na prova Corporation</p>
         </footer>
-        
+
     </body>
 </html>
