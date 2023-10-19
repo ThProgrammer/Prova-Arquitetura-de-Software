@@ -16,7 +16,7 @@ New Database connection > Driver: MySQL (Connector/ J driver)
 
 Depois vai em add e adiciona o arquivo do driver (q vai ter a caneca java de icon)
 
-- NEW CONNECTION WIZARD:
+- NEW CONNECTION WIZARD / Customize Connection:
 
 Agora vamos colocar as informações para conectar o banco de dados (Normalmente localhost; 3306 e o nome da database (banco de dados))
 e usuario (root) e senha.

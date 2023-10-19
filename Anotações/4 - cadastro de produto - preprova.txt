@@ -1,0 +1,63 @@
+Cadastrar no banco de dados - PreProva - BancoDao:
+
+
+
+conecta com o banco de dados usando o método conectar()
+
+E o resto é grego sinceramente:::
+
+public <T> int cadastrar(T obj){
+        conectar();
+        try{
+            manager.getTransaction().begin();
+            manager.persist(obj);
+            manager.getTransaction().commit();
+            return 1;
+        }   catch (RollbackException erro){ 
+	
+
+return 2;
+        }   catch(Exception erro){
+            return 0;
+        }
+    }
+
+==============================
+
+Depois fazemos o recebimento e a logica para exibir mensagens no controllerproduto:
+
+PRESTE BASTANTE ATENÇÃO NAS VARIÁVEIS E OBJETOS E BLA BLA BLA
+
+if (flag.equals("cadastroProduto")) {
+
+            id = Integer.parseInt(request.getParameter("id"));
+            nome = request.getParameter("nome");
+            marca = request.getParameter("marca");
+            preco = Double.parseDouble(request.getParameter("preco"));
+
+            Produto produto = new Produto(id, nome, marca, preco);
+            
+            switch(new BancoDao().cadastrar(produto)){                
+                case 1:
+                    mensagem = "produto cadastrado com sucesso";
+                    break;
+                case 2:
+                    mensagem = "O produto "+produto.getId()+" já está cadastrado";
+                    break;
+                default:
+                    mensagem = "Erro ao tentar salvar o produto";
+                    break;
+            }
+            request.setAttribute("mensagem", mensagem);
+            request.getRequestDispatcher("mensagens.jsp").forward(request, response);
+
+====================================
+
+
+Após isso podemos criar o arquivo mensagens.jsp na camada view (web pages) - copiar do github!!!
+
+
+====================================
+
+LISTAGEM DE PRODUTOS ---------->
+

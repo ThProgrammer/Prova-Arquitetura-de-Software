@@ -22,9 +22,9 @@ Vamos ter que usar ele na classe dao
 	1. Atributos:
 
 Adiciona o atributo 
-"private EntityManagerFactory factory;" e o importa 
+I - "private EntityManagerFactory factory;" e o importa 
 
-private EntityManager manager e importa
+II - private EntityManager manager e importa
 
 factory: conectar o banco de dados
 

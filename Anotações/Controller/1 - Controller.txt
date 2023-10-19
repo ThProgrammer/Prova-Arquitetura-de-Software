@@ -20,6 +20,9 @@ PROCESS REQUEST:
 Toda programação de uma servlet é feita no metodo processRequest
 Que é o processo de requisição que controla receber e enviar dados e get e post e api e bla bla bla
 
+TIRAR O BLOCO TRY PRINTWRITER OUT BLA BLA BLA
+
+
 Para receber os dados precisamos criar uma variável para cada dado que receberemos (no caso os atributos da tabela usuario, usuario e senha.)
 
 String u
@@ -64,5 +67,9 @@ Se não for de login, verificamos se é de cadastro de usuario else if flag bla 
 =================================
 
 Agora vamos validar logins!!
+
+OU
+
+Agora vamos cadastrar no banco de dados!!
 
 

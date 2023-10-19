@@ -1,0 +1,76 @@
+1 - Listagem de produtos - BancoDao:
+
+igual ao cadastrar, primeiro fazemos o método no DAO
+
+public <T>List listar(String queryNomeada, Class<T> classe){
+        conectar();
+        try{
+            return manager.createNamedQuery(queryNomeada, classe).getResultList();
+        } catch(NoResultException erro){
+            return null;
+        }
+    }
+
+===================================
+
+2 - Listagem.jsp:
+
+<%@page import="java.util.List"%>
+<%@page import="model.Produto"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            List<Produto> produtos = (List<Produto>) request.getAttribute("produtos");
+        %>
+        <table border='1'>
+            <tr>
+                <th> ID </th>
+                <th> Nome </th>   
+                <th> Marca </th>
+                <th> Preco </th>
+            </tr>
+            <%
+                for (Produto produto : produtos) {
+            %>   
+            <tr>
+                <td> <%= produto.getId()%> </td>
+                <td> <%= produto.getNome()%> </td>
+                <td> <%= produto.getMarca()%> </td>
+                <td> <%= produto.getPreco()%> </td> 
+            </tr>    
+            <%
+                }
+            %> 
+        </table>    
+    </body>
+</html>
+
+====================================
+
+
+3 - Listagem de produtos - ControllerProduto:
+
+Agora vamos fazer o código para exibir as mensagens
+
+NÃO SE ESQUECER: Lá no index, na tag <a> da listagem seu href deve ser:
+
+href="ControllerProduto?flag=listagem"
+
+E por fim o código no controller:
+
+} else if(flag.equals("listagem")){
+            List<Produto> produtos = new BancoDao().listar("Produto.findAll", Produto.class);
+            if(produtos == null){
+                request.setAttribute("mensagem", "Nenhum produto cadastrado no momento");
+                request.getRequestDispatcher("mensagem.jsp").forward(request, response);
+            } else {                
+                request.setAttribute("produtos", produtos);
+                request.getRequestDispatcher("listagem.jsp").forward(request, response);
+            }     
+        }

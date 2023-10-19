@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Cadastro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastro</h1>
+
+        <form method="post" action="ControllerProduto"> 
+            
+            <!-- Será que precisa do size e do maxlenght nos inputs???-->
+            
+            <input type="hidden" name="flag" value="cadastroProduto">
+
+            <p>
+                <label for="id">ID do produto:</label>                
+                <input type="text" name="id" id="id"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+            
+            <!-- Seria mesmo type text?? -->
+
+            <p>
+                <label for="nome">Nome do produto:</label>                
+                <input type="text" name="nome" id="nome"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+
+            <p>
+                <label for="marca">Marca:</label>                
+                <input type="text" name="marca" id="marca"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+            
+            <p>
+                <label for="preco">Preço</label>                
+                <input type="text" name="preco" id="preco"> <!-- muito importante não esquecer o name!! -->                
+            </p>
+
+            <p>
+                <input type="submit" value="Cadastrar">
+            </p>
+        </form>
+
+        <!-- method "post": não mostrar as informações na url
+        action: salvar as informações no arquivo tal-->
+    </body>
+</html>

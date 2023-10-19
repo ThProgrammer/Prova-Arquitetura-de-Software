@@ -12,7 +12,7 @@ File > New Project:
 
 Passo 1 - Choose Project:
 
-Java with ant > Java Web
+Java with ant > Java Web > Web Application
 
 Passo 2 - Name and Location (auto explicativo):
 

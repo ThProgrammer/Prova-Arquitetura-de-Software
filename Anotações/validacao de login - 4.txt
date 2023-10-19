@@ -72,7 +72,7 @@ Basicamente, ele tenta achar os dados, se não achar, ele retorna null
 
 Dentro da condiçao da flag.equals após os getParameter declara um objeto EmpresaDao e um objeto usuario
 
-EmpresaDao dao = new EmpresaDao
+EmpresaDao dao = new EmpresaDao()
 Usuario usuario = dao.validarLogin(u, s);
 
 Após isso inserimos as condições => se o objeto do usuario == null -> usuario invalido
