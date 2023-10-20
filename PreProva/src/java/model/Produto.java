@@ -50,7 +50,7 @@ public class Produto implements Serializable {
         this.id = id;
     }
 
-    public Produto(Integer id, String nome, String marca, Double preco) {
+    public Produto(Integer id, String nome, String marca, Double preco) { //Construtor novo
         this.id = id;
         this.nome = nome;
         this.marca = marca;

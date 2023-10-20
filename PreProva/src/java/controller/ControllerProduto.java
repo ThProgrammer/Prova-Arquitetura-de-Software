@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +35,7 @@ public class ControllerProduto extends HttpServlet {
             marca = request.getParameter("marca");
             preco = Double.parseDouble(request.getParameter("preco"));
 
-            Produto produto = new Produto(id, nome, marca, preco);
+            Produto produto = new Produto(id, nome, marca, preco); //Mexer no construtor da classe produto;
             
             switch(new BancoDao().cadastrar(produto)){                
                 case 1:

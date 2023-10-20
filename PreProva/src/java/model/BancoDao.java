@@ -28,8 +28,7 @@ public class BancoDao {
             manager.persist(obj);
             manager.getTransaction().commit();
             return 1;
-        }   catch (RollbackException erro){ 
-            //duplicação de Chave Primaria
+        }   catch (RollbackException erro){
             return 2;
         }   catch(Exception erro){
             return 0;
